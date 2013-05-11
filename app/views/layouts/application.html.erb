@@ -1,14 +1,18 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>RoR tutorial Sample App | <%= @title %></title>
-  <%= stylesheet_link_tag    "application", :media => "all" %>
-  <%= javascript_include_tag "application" %>
-  <%= csrf_meta_tags %>
+  <title>RoR tutorial Sample App | <%= title %></title>
+	<%= render 'layouts/stylesheets' %>
 </head>
 <body>
-
-<%= yield %>
-
+<div class="container">
+	<header>
+	<%= render 'layouts/header' %>
+	</header>
+	<section class="round">
+		<%= yield %>
+	</section>
+	<%= render 'layouts/footer' %>
+</div>
 </body>
 </html>
