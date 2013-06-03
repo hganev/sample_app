@@ -6,7 +6,10 @@ gem 'rails', '3.2.13'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 gem 'sqlite3', :group => [:development, :test]
 
+gem 'gravatar_image_tag'
+
 group :development do
+  gem 'rspec'
 	gem 'rspec-rails'
   gem 'annotate'
 end
@@ -20,6 +23,7 @@ group :test do
   gem 'nokogiri'
   gem 'ZenTest' #######
   gem 'spork'
+  gem 'factory_girl_rails'
 end
 
 # group :development, :test do
