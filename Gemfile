@@ -7,11 +7,14 @@ gem 'rails', '3.2.13'
 gem 'sqlite3', :group => [:development, :test]
 
 gem 'gravatar_image_tag'
+gem 'will_paginate', '3.0.4'
+gem 'bootstrap-will_paginate', '0.0.9'
 
 group :development do
   gem 'rspec'
 	gem 'rspec-rails'
   gem 'annotate'
+  gem 'faker', '1.0.1'
 end
 
 group :test do
@@ -23,7 +26,7 @@ group :test do
   gem 'nokogiri'
   gem 'ZenTest' #######
   gem 'spork'
-  gem 'factory_girl_rails'
+  gem "factory_girl_rails"
 end
 
 # group :development, :test do
