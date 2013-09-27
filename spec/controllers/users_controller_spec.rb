@@ -243,7 +243,8 @@ describe UsersController do
 
       it "should change the user's attributes" do
         put :update, :id => @user, :user => @attr
-        @user.reload
+        @user.reload  def self.authenticate(email, submitted_password)
+
         @user.name.should == @attr[:name]
         @user.email.should == @attr[:email]
       end
@@ -287,7 +288,7 @@ describe UsersController do
   describe "DELETE 'destroy" do
 
     before :each do 
-      @user = Factory :user
+      @user = FactoryGirl.create(:user)
     end
 
     describe "as a non-signed user" do
@@ -322,7 +323,6 @@ describe UsersController do
         delete :destroy, :id => @user
         response.should redirect_to users_path
       end
-
     end
   end
 end

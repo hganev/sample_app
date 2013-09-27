@@ -83,4 +83,21 @@ describe "LayoutLinks" do
 
 	end
 
+	describe "admin links" do
+		before :each do
+			@user = FactoryGirl.create(:user)
+			integration_test_sign_in @user
+		end
+
+		it "should not have 'delete' link for normal user" do
+			visit root_path
+			click_link "Users"
+			response.should have_selector("a", :href => user_path(@user),
+																				 :content => "Profile") 
+		end
+
+		it "should have 'delete' link for admin user" do
+		end
+	end
+
 end
